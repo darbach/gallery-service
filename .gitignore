@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Derby ###
+
+# - data directory
+
+
+# - log file
+derby.log
