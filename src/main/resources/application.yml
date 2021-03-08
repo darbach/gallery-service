@@ -1,0 +1,31 @@
+# .properties equivalent for
+# server.servlet.context-path=/gallery
+# spring.datasource.url=jdbc:derby:gallery_db;create=true;collation=TERRITORY_BASED:PRIMARY
+# spring.jpa.database-platform=org.hibernate.dialect.DerbyTenSevenDialect
+# spring.jpa.hibernate.ddl-auto=update
+#
+# #spring.jpa.properties.javax.persistence.schema-generation.create-source=metadata
+# #spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
+# #spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=ddl.sql
+spring:
+  datasource:
+    url: jdbc:derby:gallery_db;create=true;collation=TERRITORY_BASED:PRIMARY
+  jpa:
+    database-platform: org.hibernate.dialect.DerbyTenSevenDialect
+    hibernate:
+      ddl-auto: update
+#    properties:
+#      javax:
+#        persistence:
+#          schema-generation:
+#            create-source: metadata
+#            scripts:
+#              action: create
+#              create-target: ddl.sql
+server:
+  port: 18181
+  servlet:
+    context-path: /gallery
+
+
+
