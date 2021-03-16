@@ -107,7 +107,7 @@ public class UploadConfiguration {
 
     private String format = "%1$s-%2$d.%3$s";
     private int randomizerLimit = 1_000_000;
-    private Timestamp timestamp;
+    private TimestampProperties timestamp;
 
     /**
      * Return the format string for autonaming uploaded files.
@@ -140,21 +140,21 @@ public class UploadConfiguration {
     /**
      * Return the timestamp appended to autonamed uploaded files.
      */
-    public Timestamp getTimestamp() {
+    public TimestampProperties getTimestamp() {
       return timestamp;
     }
 
     /**
      * Set the timestamp appended to autonamed uploaded files.
      */
-    public void setTimestamp(Timestamp timestamp) {
+    public void setTimestamp(TimestampProperties timestamp) {
       this.timestamp = timestamp;
     }
 
     /**
      * Hold the timestamp information appended to autonamed uploaded files.
      */
-    public static class Timestamp {
+    public static class TimestampProperties {
 
       private String format = "yyyyMMddHHmmssSSS";
       private TimeZone timeZone = TimeZone.getTimeZone("UTC");
