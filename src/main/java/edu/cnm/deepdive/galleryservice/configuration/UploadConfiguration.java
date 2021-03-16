@@ -100,53 +100,89 @@ public class UploadConfiguration {
     this.filename = filename;
   }
 
+  /**
+   * Hold the Filename properties for format, a randomizer limit, and a date/time stamp.
+   */
   public static class FilenameProperties {
 
     private String format = "%1$s-%2$d.%3$s";
     private int randomizerLimit = 1_000_000;
     private Timestamp timestamp;
 
+    /**
+     * Return the format string for autonaming uploaded files.
+     */
     public String getFormat() {
       return format;
     }
 
+    /**
+     * Set the format string for autonaming uploaded files.
+     */
     public void setFormat(String format) {
       this.format = format;
     }
 
+    /**
+     * Return the number limit for appending a random number to autonamed uploaded files.
+     */
     public int getRandomizerLimit() {
       return randomizerLimit;
     }
 
+    /**
+     * Set the number limit for appending a random number to autonamed uploaded files.
+     */
     public void setRandomizerLimit(int randomizerLimit) {
       this.randomizerLimit = randomizerLimit;
     }
 
+    /**
+     * Return the timestamp appended to autonamed uploaded files.
+     */
     public Timestamp getTimestamp() {
       return timestamp;
     }
 
+    /**
+     * Set the timestamp appended to autonamed uploaded files.
+     */
     public void setTimestamp(Timestamp timestamp) {
       this.timestamp = timestamp;
     }
 
+    /**
+     * Hold the timestamp information appended to autonamed uploaded files.
+     */
     public static class Timestamp {
 
       private String format = "yyyyMMddHHmmssSSS";
       private TimeZone timeZone = TimeZone.getTimeZone("UTC");
 
+      /**
+       * Return the format string for creating a timestamp to append to uploaded files.
+       */
       public String getFormat() {
         return format;
       }
 
+      /**
+       * Set the format string for creating a timestamp to append to uploaded files.
+       */
       public void setFormat(String format) {
         this.format = format;
       }
 
+      /**
+       * Return the timezone used when creating a timestamp.
+       */
       public TimeZone getTimeZone() {
         return timeZone;
       }
 
+      /**
+       * Set the timezone used when creating a timestamp.
+       */
       public void setTimeZone(TimeZone timeZone) {
         this.timeZone = timeZone;
       }
