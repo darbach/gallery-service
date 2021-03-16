@@ -59,11 +59,13 @@ public class User {
   @Column(nullable = false, unique = true)
   private String displayName;
 
+  @JsonIgnore
   @NonNull
   @OneToMany(mappedBy = "contributor", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @OrderBy("created DESC")
   private final List<Image> images = new LinkedList<>();
 
+  @JsonIgnore
   @NonNull
   @OneToMany(mappedBy = "creator", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
   @OrderBy("created DESC")
