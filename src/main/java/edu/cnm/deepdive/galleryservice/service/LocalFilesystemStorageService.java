@@ -2,7 +2,7 @@ package edu.cnm.deepdive.galleryservice.service;
 
 import edu.cnm.deepdive.galleryservice.configuration.UploadConfiguration;
 import edu.cnm.deepdive.galleryservice.configuration.UploadConfiguration.FilenameProperties;
-import edu.cnm.deepdive.galleryservice.configuration.UploadConfiguration.FilenameProperties.TimestampProperties;
+import edu.cnm.deepdive.galleryservice.configuration.UploadConfiguration.FilenameProperties.Timestamp;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -49,7 +49,7 @@ public class LocalFilesystemStorageService implements StorageService {
       Random rng, UploadConfiguration uploadConfiguration, ApplicationHome applicationHome) {
     this.rng = rng;
     FilenameProperties filenameProperties = uploadConfiguration.getFilename();
-    TimestampProperties timestampProperties = filenameProperties.getTimestamp();
+    Timestamp timestamp = filenameProperties.getTimestamp();
     String uploadPath = uploadConfiguration.getDirectory();
     uploadDirectory = uploadConfiguration.isApplicationHome()
         ? applicationHome.getDir().toPath().resolve(uploadPath)
@@ -64,8 +64,8 @@ public class LocalFilesystemStorageService implements StorageService {
         .collect(Collectors.toList());
     filenameFormat = filenameProperties.getFormat();
     randomizerLimit = filenameProperties.getRandomizerLimit();
-    formatter = new SimpleDateFormat(timestampProperties.getFormat());
-    formatter.setTimeZone(timestampProperties.getTimeZone());
+    formatter = new SimpleDateFormat(timestamp.getFormat());
+    formatter.setTimeZone(timestamp.getTimeZone());
   }
 
   @Override

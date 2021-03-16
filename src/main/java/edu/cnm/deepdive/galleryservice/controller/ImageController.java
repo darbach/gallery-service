@@ -39,7 +39,7 @@ public class ImageController {
       @RequestParam MultipartFile file,
       @RequestParam(required = false) String title,
       @RequestParam(required = false) String description,
-      @RequestParam Authentication auth) throws IOException, HttpMediaTypeException {
+      Authentication auth) throws IOException, HttpMediaTypeException {
     Image image = imageService.store(file, title, description, (User) auth.getPrincipal());
     return ResponseEntity
         .created(image.getHref())
@@ -47,7 +47,7 @@ public class ImageController {
   }
 
   @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-  public Image get(UUID id, Authentication auth) {
+  public Image get(@PathVariable UUID id, Authentication auth) {
     return imageService
         .get(id)
         .orElseThrow();
@@ -72,7 +72,5 @@ public class ImageController {
         })
         .orElseThrow();
   }
-
-
 
 }

@@ -66,10 +66,10 @@ public class Image {
   @Column(nullable = false, updatable = false)
   private String name;
 
-  @NonNull
-  @Column(nullable = false, updatable = false)
   @JsonIgnore
-  private String Key;
+  @NonNull
+  @Column(name = "resource_key", nullable = false, updatable = false)
+  private String key;
 
   @NonNull
   @Column(nullable = false, updatable = false)
@@ -139,11 +139,11 @@ public class Image {
 
   @NonNull
   public String getKey() {
-    return Key;
+    return key;
   }
 
   public void setKey(@NonNull String key) {
-    Key = key;
+    this.key = key;
   }
 
   @NonNull
