@@ -112,6 +112,10 @@ public class Image {
     return gallery;
   }
 
+  public void setGallery(Gallery gallery) {
+    this.gallery = gallery;
+  }
+
   public String getTitle() {
     return title;
   }
