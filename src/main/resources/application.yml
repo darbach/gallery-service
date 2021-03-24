@@ -8,11 +8,7 @@
 # #spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
 # #spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=ddl.sql
 spring:
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 10MB
-      max-request-size: 15MB
+
   security:
     oauth2:
       resourceserver:
@@ -25,6 +21,11 @@ spring:
     database-platform: org.hibernate.dialect.DerbyTenSevenDialect
     hibernate:
       ddl-auto: update
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB
+      max-request-size: 15MB
 #    properties:
 #      javax:
 #        persistence:
