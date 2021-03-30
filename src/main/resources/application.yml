@@ -41,8 +41,10 @@ server:
 
 upload:
   application-home: true
+  # The upload file path name
   directory: uploads
   subdirectory-pattern: "^(.{4})(.{2})(.{2}).*$"
+  # Allowed MIME types of uploaded files.
   whitelist:
     - image/bmp
     - image/gif

@@ -99,19 +99,6 @@ public class Gallery {
   }
 
   @NonNull
-  public User getCreator() {
-    return creator;
-  }
-
-  public void setCreator(@NonNull User creator) {
-    this.creator = creator;
-  }
-
-  public List<Image> getImages() {
-    return images;
-  }
-
-  @NonNull
   public String getTitle() {
     return title;
   }
@@ -126,6 +113,19 @@ public class Gallery {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  @NonNull
+  public User getCreator() {
+    return creator;
+  }
+
+  public void setCreator(@NonNull User creator) {
+    this.creator = creator;
+  }
+
+  public List<Image> getImages() {
+    return images;
   }
 
   public URI getHref() {
