@@ -160,7 +160,7 @@ public class UploadConfiguration {
       private TimeZone timeZone = TimeZone.getTimeZone("UTC");
 
       /**
-       * Return the format string for creating a timestamp to append to uploaded files.
+       * @return the format string for creating a timestamp to append to uploaded files
        */
       public String getFormat() {
         return format;
