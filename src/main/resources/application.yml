@@ -7,25 +7,15 @@
 # #spring.jpa.properties.javax.persistence.schema-generation.create-source=metadata
 # #spring.jpa.properties.javax.persistence.schema-generation.scripts.action=create
 # #spring.jpa.properties.javax.persistence.schema-generation.scripts.create-target=ddl.sql
-spring:
 
-  security:
-    oauth2:
-      resourceserver:
-        jwt:
-          issuer-uri: https://accounts.google.com
-          client-id: 753488737215-ddhopc29cuc7om24u51edb80o4ultjds.apps.googleusercontent.com
+# focused on the database
+spring:
   datasource:
     url: jdbc:derby:gallery_db;create=true;collation=TERRITORY_BASED:PRIMARY
   jpa:
     database-platform: org.hibernate.dialect.DerbyTenSevenDialect
     hibernate:
       ddl-auto: update
-  servlet:
-    multipart:
-      enabled: true
-      max-file-size: 10MB
-      max-request-size: 15MB
 #    properties:
 #      javax:
 #        persistence:
@@ -34,27 +24,5 @@ spring:
 #            scripts:
 #              action: create
 #              create-target: ddl.sql
-server:
-  port: 18181
-  servlet:
-    context-path: /gallery
-
-upload:
-  application-home: true
-  # The upload file path name
-  directory: uploads
-  subdirectory-pattern: "^(.{4})(.{2})(.{2}).*$"
-  # Allowed MIME types of uploaded files.
-  whitelist:
-    - image/bmp
-    - image/gif
-    - image/jpeg
-    - image/pjpeg
-    - image/png
-    - image/tiff
-  filename:
-    format: "%1$s-%2$d.%3$s"
-    randomizer-limit: 1000000
-    timestamp:
-      format: yyyyMMddHHmmssSSS
-      time-zone: UTC
+  profiles:
+    active: service
