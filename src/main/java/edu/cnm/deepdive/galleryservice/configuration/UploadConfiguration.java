@@ -182,6 +182,8 @@ public class UploadConfiguration {
 
       /**
        * Set the timezone used when creating a timestamp.
+       *
+       * @param timeZone {@link TimeZone}
        */
       public void setTimeZone(TimeZone timeZone) {
         this.timeZone = timeZone;

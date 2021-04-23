@@ -18,6 +18,7 @@ server:
   port: 18181
   servlet:
     context-path: /gallery
+  forward-headers-strategy: framework
 
 upload:
   application-home: true
